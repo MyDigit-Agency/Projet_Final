@@ -1,0 +1,420 @@
+        /* --- VARIABLES & RESET --- */
+        :root {
+            --gold: #C5A059;
+            --blue: #1A1A2E;
+            --white: #F8F9FA;
+            --glass: rgba(26, 26, 46, 0.85);
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            /* Scroll Snapping sur le conteneur principal */
+            scroll-snap-type: y mandatory;
+            height: 100%;
+            overflow-y: scroll;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--blue);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* --- TYPOGRAPHIE --- */
+        h1, h2, h3 {
+            font-family: var(--font-serif);
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Effet Glassmorphism constant car "changement au scroll" impossible sans JS */
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--white);
+        }
+
+        nav .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--white);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        /* --- STRUCTURE DES SECTIONS (Scroll Snap) --- */
+        section, header, footer {
+            height: 100vh; /* Force la hauteur de l'écran */
+            width: 100%;
+            scroll-snap-align: start; /* Le point d'accroche */
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 10%;
+        }
+
+        /* --- HEADER / HERO --- */
+        header {
+            color: var(--white);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Fond vidéo simulé (image pour l'exemple, remplacer par <video>) */
+        .video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            filter: brightness(0.6);
+        }
+
+        header h1 {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+
+        /* --- SECTION EXPERIENCE --- */
+        #experience {
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        blockquote {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-style: italic;
+            color: var(--blue);
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            position: relative;
+        }
+
+        blockquote::before {
+            content: "“";
+            font-size: 8rem;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: -40px;
+            left: -40px;
+        }
+
+        .intro-text p {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: justify;
+            font-size: 1.1rem;
+        }
+
+        /* Lettrine CSS */
+        .intro-text p::first-letter {
+            font-family: var(--font-serif);
+            font-size: 4rem;
+            color: var(--gold);
+            float: left;
+            margin-right: 10px;
+            line-height: 0.8;
+            font-weight: bold;
+        }
+
+        /* --- SECTION ROOMS --- */
+        #rooms {
+            background-color: var(--blue);
+            color: var(--white);
+        }
+
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            width: 100%;
+            max-width: 1400px;
+        }
+
+        article {
+            background: rgba(255, 255, 255, 0.05);
+            overflow: hidden; /* Nécessaire pour l'effet zoom */
+            border-bottom: 3px solid var(--gold);
+            transition: transform 0.3s;
+        }
+
+        .img-wrapper {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        article img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        /* Hover Effect: Zoom Image */
+        article:hover img {
+            transform: scale(1.1);
+        }
+
+        .room-info {
+            padding: 1.5rem;
+        }
+
+        .room-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--gold);
+        }
+
+        .room-info ul {
+            list-style: none;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .room-info ul li::before {
+            content: "•";
+            color: var(--gold);
+            margin-right: 5px;
+        }
+
+        /* --- SECTION AMENITIES --- */
+        #amenities {
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .amenity-card {
+            text-align: center;
+            padding: 2rem;
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .icon-box {
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            /* Placeholder pour SVG */
+            display: flex;
+            justify-content: center;
+        }
+        
+        /* SVG Styling */
+        .icon-box svg {
+            width: 64px;
+            height: 64px;
+            fill: var(--gold);
+        }
+
+        /* --- BOOKING BAR (ASIDE) --- */
+        #booking-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1000px;
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 1.5rem;
+            border-radius: 5px;
+            z-index: 999;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+        }
+
+        form {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        label {
+            color: var(--gold);
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        input, select {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--white);
+            color: var(--white);
+            padding: 10px 0;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        /* Interaction Focus */
+        input:focus, select:focus {
+            border-bottom-color: var(--gold);
+        }
+
+        /* Hack pour les dates en blanc */
+        input[type="date"] {
+            color-scheme: dark;
+        }
+
+        .btn-book {
+            background-color: var(--gold);
+            color: var(--blue);
+            border: none;
+            padding: 10px 30px;
+            font-family: var(--font-serif);
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            height: 45px;
+        }
+
+        .btn-book:hover {
+            background-color: #fff;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #111;
+            color: rgba(255,255,255,0.7);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5%;
+            height: 100vh;
+        }
+
+        .footer-content {
+            flex: 1;
+            padding-right: 2rem;
+        }
+
+        .map-container {
+            flex: 1;
+            height: 60%;
+            border: 1px solid var(--gold);
+            filter: grayscale(100%) invert(90%) contrast(120%); /* Mode sombre CSS pour la map */
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2rem; }
+            
+            nav ul { display: none; } /* Menu burger simplifié (caché pour l'exemple sans JS) */
+            nav { justify-content: center; }
+
+            .rooms-grid {
+                grid-template-columns: 1fr; /* 1 colonne */
+                overflow-y: auto;
+                max-height: 60vh; /* Permet le scroll interne sur mobile si ça dépasse */
+            }
+
+            #amenities, footer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            form {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            #booking-bar {
+                position: relative; /* N'est plus sticky sur mobile pour éviter de cacher le contenu */
+                bottom: 0;
+                transform: none;
+                left: 0;
+                width: 100%;
+                margin-top: 2rem;
+            }
+
+            /* Désactiver le scroll snap strict sur mobile si le contenu est trop long */
+            section {
+                height: auto;
+                min-height: 100vh;
+                padding: 4rem 5%;
+            }
+            
+            .map-container {
+                width: 100%;
+                height: 300px;
+                margin-top: 2rem;
+            }
+        }

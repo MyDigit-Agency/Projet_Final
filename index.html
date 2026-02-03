@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Horizon Palace | L'élégance à fleur d'eau</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    
+    <!-- Typographie Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- NAVIGATION FIXE -->
+    <nav>
+        <div class="logo">L'Horizon Palace</div>
+        <ul>
+            <li><a href="#experience">L'Expérience</a></li>
+            <li><a href="#rooms">Suites</a></li>
+            <li><a href="#amenities">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HEADER (HERO) -->
+    <header>
+        <!-- Vidéo Background (Muted/Loop/Autoplay) -->
+        <!-- Note: J'utilise une image placeholder ici. Pour la vidéo, décommentez la ligne suivante : -->
+        <!-- <video autoplay muted loop class="video-bg"><source src="ocean-view.mp4" type="video/mp4"></video> -->
+        <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=2049&auto=format&fit=crop" alt="Vue sur l'océan depuis la suite" class="video-bg">
+        
+        <h1>L'Horizon Palace</h1>
+        <p>L'élégance à fleur d'eau.</p>
+    </header>
+
+    <!-- SECTION 1: L'EXPERIENCE -->
+    <section id="experience">
+        <blockquote>
+            "Un lieu où le temps se suspend et où l'océan devient votre plus proche confident."
+        </blockquote>
+        <div class="intro-text">
+            <p>
+                Nichés entre ciel et mer, nous avons redéfini les codes de l'hospitalité de luxe. L'Horizon Palace n'est pas simplement un hôtel, c'est une promesse d'évasion. Chaque détail, de la soie de vos draps à la lumière dorée du soir, a été pensé pour éveiller vos sens. Venez vivre l'exceptionnel dans un cadre où l'architecture moderne s'efface devant la majesté de la nature.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION 2: LE CATALOGUE (ROOMS) -->
+    <section id="rooms">
+        <h2>Nos Sanctuaires</h2>
+        <div class="rooms-grid">
+            <!-- Article 1 -->
+            <article>
+                <div class="img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=2070&auto=format&fit=crop" alt="Suite Junior" loading="lazy">
+                </div>
+                <div class="room-info">
+                    <h3>Suite Junior</h3>
+                    <ul>
+                        <li>Vue Jardin</li>
+                        <li>45 m²</li>
+                        <li>Bain à remous</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article>
+                <div class="img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1590490360182-f33efe80a713?q=80&w=2070&auto=format&fit=crop" alt="Suite Royale" loading="lazy">
+                </div>
+                <div class="room-info">
+                    <h3>Suite Royale</h3>
+                    <ul>
+                        <li>Vue Océan Panoramique</li>
+                        <li>80 m²</li>
+                        <li>Terrasse Privée</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article>
+                <div class="img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=2070&auto=format&fit=crop" alt="The Penthouse" loading="lazy">
+                </div>
+                <div class="room-info">
+                    <h3>Le Penthouse</h3>
+                    <ul>
+                        <li>Toit-terrasse 360°</li>
+                        <li>150 m²</li>
+                        <li>Service Majordome</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- SECTION 3: AMENITIES -->
+    <section id="amenities">
+        <div class="amenity-card">
+            <div class="icon-box">
+                <!-- SVG Spa -->
+                <svg viewBox="0 0 24 24"><path d="M12 2C7.58 2 4 5.58 4 10c0 2.03.76 3.87 2 5.28V20c0 1.1.9 2 2 2h2v-2h4v2h2c1.1 0 2-.9 2-2v-4.72c1.24-1.41 2-3.25 2-5.28 0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+            </div>
+            <h3>Spa Océanique</h3>
+            <p>Soins signatures aux algues marines et pierres chaudes.</p>
+        </div>
+        <div class="amenity-card">
+            <div class="icon-box">
+                <!-- SVG Restaurant -->
+                <svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
+            </div>
+            <h3>Table Étoilée</h3>
+            <p>Gastronomie locale sublimée par notre chef étoilé.</p>
+        </div>
+        <div class="amenity-card">
+            <div class="icon-box">
+                <!-- SVG Conciergerie -->
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+            </div>
+            <h3>Conciergerie</h3>
+            <p>Service sur-mesure 24/7 pour exaucer vos désirs.</p>
+        </div>
+    </section>
+
+    <!-- BARRE DE RÉSERVATION FLOTTANTE (STICKY) -->
+    <aside id="booking-bar">
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="arrival">Arrivée</label>
+                <input type="date" id="arrival" name="arrival" required>
+            </div>
+            <div class="form-group">
+                <label for="departure">Départ</label>
+                <input type="date" id="departure" name="departure" required>
+            </div>
+            <div class="form-group">
+                <label for="suite">Votre Suite</label>
+                <select id="suite" name="suite">
+                    <option value="junior">Suite Junior</option>
+                    <option value="royal">Suite Royale</option>
+                    <option value="penthouse">Penthouse</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-book">RÉSERVER</button>
+        </form>
+    </aside>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-content">
+            <h2>L'Horizon Palace</h2>
+            <address style="font-style: normal; margin-bottom: 2rem;">
+                1200 Promenade des Anglais<br>
+                06000 Nice, France<br><br>
+                <a href="tel:+33493000000" style="color:var(--gold); text-decoration: none;">+33 4 93 00 00 00</a><br>
+                <a href="mailto:contact@horizonpalace.com" style="color:var(--white); text-decoration: none;">contact@horizonpalace.com</a>
+            </address>
+            <p style="font-size: 0.8rem;">© 2024 L'Horizon Palace. Tous droits réservés.</p>
+        </div>
+        
+        <div class="map-container">
+            <!-- Iframe Google Maps (Placeholder) -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.346437549002!2d7.245864115499298!3d43.69747207911993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cdd00676993175%3A0x629555c82662095f!2sPromenade%20des%20Anglais%2C%20Nice!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </footer>
+
+</body>
+</html>
